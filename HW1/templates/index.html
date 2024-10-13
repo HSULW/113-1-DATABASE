@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用者資訊表單</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            color: #555;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            color: white;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        tr:nth-child(1) td {
+            background-color: #0056b3; 
+        }
+
+        tr:nth-child(2) td {
+            background-color: #ffcc00; 
+        }
+
+        tr:nth-child(3) td {
+            background-color: #000000; 
+        }
+
+        tr:nth-child(4) td {
+            background-color: #28a745;
+        }
+
+        tr:nth-child(5) td {
+            background-color: #dc3545; 
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <h1>輸入你的資料</h1>
+        
+        <div class="form-group">
+            <label for="name">名字:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="hometown">代表隊:</label>
+            <input type="text" id="hometown" name="hometown" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="sports">報名的運動種類:</label>
+            <input type="text" id="sports" name="sports" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="learned_years">學習年數:</label>
+            <input type="number" id="learned_years" name="learned_years" required>
+        </div>
+        
+        <button type="submit">提交</button>
+    </form>
+
+    <!-- 顯示已報名資料 -->
+    <h2>已報名的資料</h2>
+    <table>
+        <tr>
+            <th>名字</th>
+            <th>代表隊</th>
+            <th>報名的運動種類</th>
+            <th>學習年數</th>
+            <th> </th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.hometown }}</td>
+            <td>{{ user.sports }}</td>
+            <td>{{ user.learned_years }}</td>
+            <td>
+                <form action="/delete/{{ user.id }}" method="post" style="display:inline;">
+                    <button type="submit" class="delete-btn">刪除</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
