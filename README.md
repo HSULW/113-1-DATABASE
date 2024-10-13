@@ -21,3 +21,7 @@
 </table>
 
 ## HomeWork
+
+### HW1
+- [video](https://youtu.be/shA6_YcrDFU)
+- [code](https://github.com/HSULW/113-1-DATABASE/tree/71600b38438c7e3efc8234564191ab808644f41a/HW1)
