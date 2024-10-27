@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>運動員管理系統</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>運動員管理系統</h1>
+
+        <section class="form-section">
+            <h2>新增運動員</h2>
+            <form method="post" action="/add_athlete">
+                <label>Name: <input type="text" name="name" required></label>
+                <label>Age: <input type="number" name="age" required></label>
+                <label>Country: <input type="text" name="country" required></label>
+                <button type="submit" class="add-button">Add Athlete</button>
+            </form>
+        </section>
+
+        <section class="table-section">
+            <h2>運動員列表</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Country</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for athlete in athletes %}
+                    <tr>
+                        <td>{{ athlete.Name }}</td>
+                        <td>{{ athlete.Age }}</td>
+                        <td>{{ athlete.Country }}</td>
+                        <td>
+                            <form method="post" action="/update_athlete/{{ athlete.AthleteID }}" class="inline-form">
+                                <input type="number" name="age" placeholder="New Age">
+                                <button type="submit" class="update-button">Update</button>
+                            </form>
+                            <a href="/delete_athlete/{{ athlete.AthleteID }}" class="delete-button">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <a href="{{ url_for('join.join_data') }}" class="view-link">查看運動員和身體指數的聯合查詢結果</a>
+    </div>
+</body>
+</html>

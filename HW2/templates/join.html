@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>運動員和身體指數的聯合查詢結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>運動員及其參加項目和身體指數</h1>
+        
+        <!-- 新增資料表單 -->
+        <section class="form-section">
+            <h2>新增運動員及其相關資料</h2>
+            <form method="post" action="{{ url_for('join.add_athlete') }}">
+                <label>姓名 (Name): <input type="text" name="name" required></label><br>
+                <label>年齡 (Age): <input type="number" name="age" required></label><br>
+                <label>國籍 (Country): <input type="text" name="country" required></label><br>
+                <label>運動項目 (Sport): <input type="text" name="sport_name" required></label><br>
+                <label>項目類型 (Category): <input type="text" name="category" required></label><br>
+                <label>身高 (Height): <input type="number" step="0.1" name="height" required></label><br>
+                <label>體重 (Weight): <input type="number" step="0.1" name="weight" required></label><br>
+                <button type="submit" class="add-button">新增運動員</button>
+            </form>
+        </section>
+
+        <!-- 顯示聯合查詢結果的表格 -->
+        <section class="table-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>姓名 (Name)</th>
+                        <th>國籍 (Country)</th>
+                        <th>運動項目 (Sport)</th>
+                        <th>身高 (Height)</th>
+                        <th>體重 (Weight)</th>
+                        <th>BMI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{ row.Name }}</td>
+                        <td>{{ row.Country }}</td>
+                        <td>{{ row.SportName }}</td>
+                        <td>{{ row.Height }}</td>
+                        <td>{{ row.Weight }}</td>
+                        <td>{{ row.BMI }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <a href="{{ url_for('index') }}" class="back-link">回到主頁</a>
+    </div>
+</body>
+</html>
