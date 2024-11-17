@@ -32,3 +32,6 @@
 - [ER diagram](https://github.com/HSULW/113-1-DATABASE/blob/ae876b86d118cb9d57553b9bb56e309ca4708828/HW2/ER%20diagram.png)
  <img src="HW2/ER diagram.png" alt="Logo" width="500" height="300">
 
+### HW3
+- [code](https://github.com/HSULW/113-1-DATABASE/tree/main/HW3)
+- [video](https://youtu.be/1PtdqqqRlHI)
