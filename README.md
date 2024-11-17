@@ -27,6 +27,7 @@
 - [code](https://github.com/HSULW/113-1-DATABASE/tree/71600b38438c7e3efc8234564191ab808644f41a/HW1)
 
 ### HW2
+- [video](https://youtu.be/Xc2hml0JuJk)
 - [code](https://github.com/HSULW/113-1-DATABASE/tree/main/HW2)
 - [ER diagram](https://github.com/HSULW/113-1-DATABASE/blob/ae876b86d118cb9d57553b9bb56e309ca4708828/HW2/ER%20diagram.png)
  <img src="HW2/ER diagram.png" alt="Logo" width="500" height="300">
