@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Meet Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Sports Meet Management</h1>
+
+    <form id="participant-form">
+        <input type="hidden" id="participant-id">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="text" id="sport" placeholder="Sport" required>
+        <input type="text" id="team" placeholder="Team" required>
+        <input type="number" id="score" placeholder="Score" required>
+        <button type="submit">Save</button>
+    </form>
+
+    <table id="participant-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sport</th>
+                <th>Team</th>
+                <th>Score</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>
