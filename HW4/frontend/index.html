@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Meet Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Sports Meet Management</h1>
+
+    <!-- 動態表單標題 -->
+    <h2 id="form-title">Add New Participant</h2> 
+
+    <!-- 表單區域 -->
+    <form id="participant-form">
+        <!-- 隱藏欄位用於存儲 ID（新增時為空） -->
+        <input type="hidden" id="participant-id">
+        
+        <!-- 可編輯的欄位 -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Name" required>
+        
+        <label for="sport">Sport:</label>
+        <input type="text" id="sport" placeholder="Sport" required>
+        
+        <label for="team">Team:</label>
+        <input type="text" id="team" placeholder="Team" required>
+        
+        <label for="score">Score:</label>
+        <input type="number" id="score" placeholder="Score" required>
+        
+        <button type="submit">Save</button>
+    </form>
+
+    <!-- 表格顯示區域 -->
+    <table id="participant-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sport</th>
+                <th>Team</th>
+                <th>Score</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>
