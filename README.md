@@ -35,3 +35,7 @@
 ### HW3
 - [code](https://github.com/HSULW/113-1-DATABASE/tree/main/HW3)
 - [video](https://youtu.be/1PtdqqqRlHI)
+
+### HW4
+-[code](https://github.com/HSULW/113-1-DATABASE/tree/main/HW4)
+-[video]
