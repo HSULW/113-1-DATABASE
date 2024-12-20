@@ -38,4 +38,4 @@
 
 ### HW4
 - [code](https://github.com/HSULW/113-1-DATABASE/tree/main/HW4)
-- [video]
+- [video](https://youtu.be/druRgZSxDXo)
